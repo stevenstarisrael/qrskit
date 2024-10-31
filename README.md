@@ -1,0 +1,1 @@
+# One-stop QR platform
