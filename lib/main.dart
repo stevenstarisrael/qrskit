@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 import 'utils/app_constants.dart';
 import 'utils/app_data.dart';
+import 'utils/app_dependencies.dart';
 
 void main() async {
+  await AppDependencies.init();
   runApp(const QrsKit());
 }
 
@@ -17,7 +18,7 @@ class QrsKit extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppConstants.appName,
       home: AppData.launchScreen,
